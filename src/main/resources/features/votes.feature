@@ -9,11 +9,16 @@ Feature: List votes
     Given x-api-key and baseURI are already acquired.
 
   @votes
-  Scenario: Creating votes and Listing for all votes
-    When I check number of votes for this "my-user-1234"
+  Scenario Outline: Creating votes and Listing for all votes
+    When I check number of votes for this "<sub_id>"
     Then I see numbers
-    When I will create one more vote for this "my-user-1234"
-    Then I have numbers plus one votes for this "my-user-1234"
+    When I will create one more vote for this "<sub_id>" with "<image_id>"
+    Then I have numbers plus one votes for this "<sub_id>" and image_id should "<image_id>"
+    Examples:
+    |sub_id      |image_id  |
+    |my-user-1234|xx|
+
+
 
     #image id senaryo taslağından alınacak
     #sub_id ler senaryo taslağından alınacak

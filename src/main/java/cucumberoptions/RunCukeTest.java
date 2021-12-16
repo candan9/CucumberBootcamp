@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
           features = "src/main/resources/features",
         glue = "steps",
         tags="@votes",
-        plugin = { "pretty", "json:target/cucumber-reports.json" }
+        plugin = { "pretty", "json:target/cucumber-reports.html" }
 )
 
 public class RunCukeTest {
